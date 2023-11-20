@@ -1,0 +1,60 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/predict.css' %}">
+{% block content %}
+
+<head>  
+    <meta charset="UTF-8">
+    <title>Diabetes Prediction</title>  
+    
+</head>  
+
+<body>  
+    <div class="form1">
+        <p class ="title">Welcome to diabetes prediction</p> 
+            <form action="result">
+                <table>
+                    <tr>
+                        <td> Pregnancies </td>
+                        <td> <input type="text" name="n1"/> </td>
+                    </tr>
+                    <tr>
+                        <td> Blood Glucose </td>
+                        <td> <input type="text" name= "n2"/> </td>
+                    </tr>
+                    <tr>
+                        <td> Blood Pressure </td>
+                        <td> <input type="text" name= "n3"/> </td>
+                    </tr>
+                    <tr>
+                        <td> Skin Thickness </td>
+                        <td> <input type="text" name= "n4"/> </td>
+                    </tr>
+                    <tr>
+                        <td> Insulin </td>
+                        <td> <input type="text" name= "n5"/> </td>
+                    </tr>
+                    <tr>
+                        <td> BMI </td>
+                        <td> <input type="text" name= "n6"/> </td>
+                    </tr>
+                    <tr>
+                        <td> Diabetes Pedigree </td>
+                        <td> <input type="text" name= "n7"/> </td>
+                    </tr>
+                    <tr>
+                        <td> Age </td>
+                        <td> <input type="text" name= "n8"/> </td>
+                    </tr>
+
+
+                </table>
+
+                <input type = "submit" value = "Let's Count">
+            </form>
+            <p>Result : {{result2}}</p>
+            <p>Probability of Positive : {{ resultyes }}</p>
+            <p>Probability of Negative : {{ resultno }}</p>
+    </div>
+</body>  
+
+{% endblock content %}

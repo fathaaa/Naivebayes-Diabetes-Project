@@ -1,0 +1,22 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% block content %}
+
+<head>  
+    <meta charset="UTF-8">
+    <title>Diabetes Prediction</title>  
+    
+</head>  
+
+<body>  
+    <div class="main1">
+        <p class ="title">Welcome to diabetes predictionp</p> 
+            <form action = "predict">
+
+                <input type = "submit" value = "Let's predict">
+            </form>
+    </div>
+</body>  
+
+{% endblock content %}
+
