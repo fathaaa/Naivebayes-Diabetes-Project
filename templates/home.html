@@ -1,0 +1,69 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% block content %}
+
+<head>  
+    <meta charset="UTF-8">
+    <title>Diabetes Prediction</title>  
+</head>  
+
+<body>  
+    <div class="main">
+        <img src="{% static 'css/images/Cloud-Bottom.png' %}"  width="1260"  height="130" transform="rotate(1.04deg)" />
+        <img src="{% static 'css/images/diabeteshomepage.jpg' %}" class="gambar-kanan" alt="Image Homepage" width="525" height="375" /> 
+        <h3 class ="title">Welcome to</h3>
+        <h1 class="text1">Diabetes</h1> 
+        <h1 class="text2">Prediction</h1>
+            <form action = "predict">
+                <input type = "submit" value = "Let's predict">
+            </form>
+    </div>
+
+    <div class="additional-content">
+        <h2>About this Project</h2>
+        <p1>Diabetes Prediction System bertujuan mengatasi masalah global diabetes dengan mengembangkan model prediktif berbasis machine learning menggunakan Python sebagai bahasa pemrograman utama. Proyek ini menggunakan Anaconda sebagai platform untuk manajemen paket dan lingkungan, serta memanfaatkan Integrated Development Environment (IDE) untuk mempermudah pengembangan model. Dengan meningkatnya jumlah penderita diabetes di seluruh dunia, proyek ini bertujuan untuk memberikan solusi yang dapat memprediksi risiko diabetes pada individu, memungkinkan pencegahan dan manajemen dini penyakit, serta mengurangi dampak komplikasi serius seperti stroke, gagal ginjal, dan serangan jantung.</p1>
+        <div class="card">
+            <img src="{% static 'css/images/Card1.jpg' %}" alt="avatar" style="width:100">
+            <div class="container">
+                <h4><b>Diabetes Prediction Overview</b></h4>
+                <p>Upaya untuk mengidentifikasi risiko atau kemungkinan seseorang mengalami diabetes di masa depan.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="{% static 'css/images/Card2.jpg' %}" alt="avatar" style="width:100">
+            <div class="container">
+                <h4><b>Using Naïve Bayes Algorithm</b></h4>
+                <p>Dengan menganalisis variabel penting seperti riwayat medis dan pola makan, algoritma ini menghitung probabilitas risiko diabetes secara efektif, memanfaatkan keberagaman informasi.</p>
+            </div>
+        </div>
+        <div class="card">
+            <img src="{% static 'css/images/Card3.jpg' %}" alt="avatar" style="width:100">
+            <div class="container">
+                <h4><b>High Accuracy, Positive & Negative Probabilities</b></h4>
+                <p>Selain menekankan probabilitas positif untuk potensi risiko diabetes, sistem ini juga memberikan perhatian pada probabilitas negatif, memastikan informasi seimbang untuk tindakan preventif yang tepat.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="introduction">
+        <h3>Project by:</h3>
+        <h2>Group 6 - P3</h2>
+
+        <div class="team-photos">
+                <img src="{% static 'css/images/Cheisha.jpg' %}"  width="400" height="350" alt="Team Member 1" />
+                <img src="{% static 'css/images/Abdil.jpg' %}" width="400" height="350" alt="Team Member 2" />
+                <img src="{% static 'css/images/Raka.jpg' %}" width="400" height="350" alt="Team Member 3" />
+                <img src="{% static 'css/images/Syifa.jpg' %}" width="400" height="350" alt="Team Member 4" />
+                <img src="{% static 'css/images/Fatha.jpg' %}" width="400" height="350" alt="Team Member 5" />
+        </div>
+    </div>
+
+    <div class="footer">
+        <img src="{% static 'css/images/ilkom.png' %}" class="gambar-tengah" /> 
+        <img src="{% static 'css/images/Cloud-Bottom2.png' %}"  width="1260"  height="130" transform="rotate(1.04deg)" />
+    </div>
+</body>  
+
+{% endblock content %}
+
