@@ -17,7 +17,7 @@ def predict(request):
     return render(request, 'predict.html')
 
 def result(request):
-    data = pd.read_csv('D:\OneDrive\Kuliah\SMT 5\AI\diabetes.csv')
+    data = pd.read_csv(r'C:\Users\irfan\Documents\KULIAH\Semester 5\diabetes.csv')
 
     x = data.drop('Outcome', axis =1)
     y = data['Outcome']

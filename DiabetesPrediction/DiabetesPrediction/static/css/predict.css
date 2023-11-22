@@ -1,6 +1,123 @@
-.main{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: aqua;
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  position: relative;
+  z-index: 2; /* Menempatkan di depan elemen lain */
+}
+
+.background {
+  position: absolute; /* Menggunakan absolute agar tetap di dalam flow dokumen */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.5; /* Menetapkan tingkat transparansi */
+  z-index: 1; /* Menempatkan di belakang elemen lain */
+}
+
+h1{
+  text-align: center; /* Mengatur teks ke tengah */
+  color: #3E4B6B;
+  font-family: Inter;
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  margin-top: 10px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin-top: 70px;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-container {
+  background-color: rgba(229, 237, 255, 0.6);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 50px;
+  padding: 20px;
+  border: 1.5px solid #3E4B6B;
+  z-index: 3;
+  position: relative;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+table {
+  width: 100%;
+}
+
+input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  margin-left: 12px;
+}
+
+input[type="submit"] {
+  background-color: #4CAF50;
+  color:white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.result-container p {
+  margin: 10px 0;
+}
+
+.result-container h3 {
+  text-align: center;
+  color: #3E4B6B;
+  font-family: Inter;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  margin-top: 20px;
+}
+
+
+.result-container-wrapper {
+  width: 100%;
+  text-align: center;
+  background-color: #c5d8ff;
+  padding: 0px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  border-radius: 50px 50px 0px 0px;
+  z-index: 3;
 }
