@@ -1,44 +1,27 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'css/predict.css' %}">
+<script src="{% static 'js/script.js' %}"></script>
 {% block content %}
 
 <head>  
     <meta charset="UTF-8">
     <title>Predict Diabetes</title>  
-    <style>
-      input:focus::-webkit-input-placeholder {
-          transition: opacity 0.5s ease-out;
-          opacity: 0;
-      }
-      input:not(:focus)::-webkit-input-placeholder {
-          transition: opacity 0.5s ease-in;
-          opacity: 1;
-      }
-  </style>
 </head>  
 
 <body>
   <div class="main">
     <img src="{% static 'css/images/Cloud-Bottom.png' %}"  width="1260"  height="110" transform="rotate(1.04deg)"/>
     <h1 class="title">Diabetes Prediction System</h1>
+    <p>This Web Application is processed by a Machine Learning Algorithm to predict probability of an individual having Diabetes</p>
+    <p2>Note this system is 74.5% accurate</p2>
   </div>
   <div class="background">
     <img src="{% static 'css/images/Cloud-middle5.png' %}" width="1200" />
   </div>
-  <script>
-    function removePlaceholder(input) {
-        input.setAttribute('data-placeholder', input.placeholder);
-        input.placeholder = '';
-    }
 
-    function restorePlaceholder(input) {
-        if (!input.value) {
-            input.placeholder = input.getAttribute('data-placeholder');
-        }
-    }
-</script>
   <div class="container">
       <div class="form-container">
+        <p>Please enter values for the following:</p>
           <form action="result">
               <table>
                   <tr>
@@ -74,18 +57,31 @@
                       <td> <input type="text" name= "n8" placeholder="Years"/> </td>
                   </tr>
               </table>
-              <input type="submit" value="Let's Count">
+              <input type="submit" value="Check and Show Result">
           </form>
-
       </div>
-      <div class="result-container-wrapper">
-      <div class="result-container">
-            <h3>Result: {{ result2 }}</h3>
-            <p>Probability of Positive: {{ resultyes }}</p>
-            <p>Probability of Negative: {{ resultno }}</p>
-        </div>
+
+      <div id="resultPopup" class="popup">
+        <p>Prediction result: <span id="predictionResult" class="result-text">{{ result2 }}</span></p>
+    
+        <div class="separator"></div> <!-- Garis pemisah -->
+
+        <p>Probability of Diabetes: <span id="probabilityDiabetes" class="probability-text">{{ resultyes }}</span></p>
+        <p>Probability of No Diabetes: <span id="probabilityNoDiabetes" class="probability-text">{{ resultno }}</span></p>
+        <button onclick="closePopup()">Close</button>
     </div>
+    <div class="overlay" onclick="closePopup()"></div>
   </div>
+
+    {% if show_popup %}
+    <script src="{% static 'js/script.js' %}"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            showPopup("{{ result2 }}", "{{ resultyes }}", "{{ resultno }}");
+        });
+    </script>
+    {% endif %}
+    
 </body> 
 
 {% endblock content %}
