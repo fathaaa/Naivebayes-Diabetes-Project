@@ -1,0 +1,91 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/predict.css' %}">
+{% block content %}
+
+<head>  
+    <meta charset="UTF-8">
+    <title>Predict Diabetes</title>  
+    <style>
+      input:focus::-webkit-input-placeholder {
+          transition: opacity 0.5s ease-out;
+          opacity: 0;
+      }
+      input:not(:focus)::-webkit-input-placeholder {
+          transition: opacity 0.5s ease-in;
+          opacity: 1;
+      }
+  </style>
+</head>  
+
+<body>
+  <div class="main">
+    <img src="{% static 'css/images/Cloud-Bottom.png' %}"  width="1260"  height="110" transform="rotate(1.04deg)"/>
+    <h1 class="title">Diabetes Prediction System</h1>
+  </div>
+  <div class="background">
+    <img src="{% static 'css/images/Cloud-middle5.png' %}" width="1200" />
+  </div>
+  <script>
+    function removePlaceholder(input) {
+        input.setAttribute('data-placeholder', input.placeholder);
+        input.placeholder = '';
+    }
+
+    function restorePlaceholder(input) {
+        if (!input.value) {
+            input.placeholder = input.getAttribute('data-placeholder');
+        }
+    }
+</script>
+  <div class="container">
+      <div class="form-container">
+          <form action="result">
+              <table>
+                  <tr>
+                      <td> Pregnancies </td>
+                      <td> <input type="text" name="n1" placeholder="Number of times pregrant"/> </td>
+                  </tr>
+                  <tr>
+                      <td> Blood Glucose </td>
+                      <td> <input type="text" name= "n2" placeholder="mg/dL"/> </td>
+                  </tr>
+                  <tr>
+                      <td> Blood Pressure </td>
+                      <td> <input type="text" name= "n3" placeholder="mm Hg"/> </td>
+                  </tr>
+                  <tr>
+                      <td> Skin Thickness </td>
+                      <td> <input type="text" name= "n4" placeholder="mm"/> </td>
+                  </tr>
+                  <tr>
+                      <td> Insulin </td>
+                      <td> <input type="text" name= "n5" placeholder="mu U/ml"/> </td>
+                  </tr>
+                  <tr>
+                      <td> BMI </td>
+                      <td> <input type="text" name= "n6" placeholder="Weight in kg/(height in m)^2"/> </td>
+                  </tr>
+                  <tr>
+                      <td> Diabetes Pedigree </td>
+                      <td> <input type="text" name= "n7" placeholder="Diabetes pedigree function" /> </td>
+                  </tr>
+                  <tr>
+                      <td> Age </td>
+                      <td> <input type="text" name= "n8" placeholder="Years"/> </td>
+                  </tr>
+              </table>
+              <input type="submit" value="Let's Count">
+          </form>
+
+      </div>
+      <div class="result-container-wrapper">
+      <div class="result-container">
+            <h3>Result: {{ result2 }}</h3>
+            <p>Probability of Positive: {{ resultyes }}</p>
+            <p>Probability of Negative: {{ resultno }}</p>
+        </div>
+    </div>
+  </div>
+</body> 
+
+{% endblock content %}
